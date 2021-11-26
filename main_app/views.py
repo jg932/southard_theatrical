@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Garment
 
 # Create your views here.
 def home(request):
@@ -8,5 +8,6 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
-def garment_index(request):
+def garments_index(request):
+  garments = Garment.objects.all()
   return render(request, 'garments/index.html', { 'garments': garments })
