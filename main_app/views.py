@@ -20,3 +20,4 @@ def garments_detail(request, garment_id):
 class GarmentCreate(CreateView):
   model = Garment
   fields = '__all__'
+  success_url = '/garments/'

@@ -17,13 +17,10 @@
       <a href='{% url "garments_detail" garment.id %}'>
         <div class="card-content">
           <div class="card-img-container">
-            <img 
-              src="{% static NEEDS DEFAULT IMAGE %}" 
-              alt=""
-            >
+            <img src="{% static 'images/empty_dressform.jpeg' %}" alt="A generic manaquin">
           </div>
           <h2 class="card-title">{{ garment.type }}</h2>
-            <p><small>{{ garment.availbility }}</small></p>
+            <p><small>{{ garment.availability }}</small></p>
         </div>
       </a>
     </div>
