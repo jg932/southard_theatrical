@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/garment-index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>On the Rack</h1>
+</section>
+
+<section class="card-container">
+  {% for garment in garments %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static NEEDS DEFAULT IMAGE %}" 
+            alt=""
+          >
+        </div>
+        <h2 class="card-title">{{ garment.type }}</h2>
+        <p><small>{{ garment.availbility }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
