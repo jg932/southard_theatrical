@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/garment_detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="cat-container">
+  <div class="cat-img">
+    <img 
+      src="{% static 'images/generic_dressform.jpeg' %}" 
+      alt="A generic mannequin image"
+    >
+  </div>
+  <div class="cat-details">
+    <h1>{{ garment.type }}</h1>
+    <h2>{{ garment.rate }}</h2>
+    <h5>{{ garment.color }}</h5>
+    <h5>{{ garment.genre }}</h5>
+    <h5>{{ garment.materials }}</h5>
+    <h5>{{ garment.sizing }}</h5>
+    <h5>{{ garment.care }}</h5>
+    <h5>{{ garment.notes }}</h5>
+  </div>
+</section>
+
+{% endblock %}
