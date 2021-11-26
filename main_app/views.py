@@ -1,5 +1,5 @@
-from django.views.generic import ListView
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Garment
 
 # Create your views here.
@@ -16,3 +16,7 @@ def garments_index(request):
 def garments_detail(request, garment_id):
   garment = Garment.objects.get(id=garment_id)
   return render(request, 'garments/detail.html', {'garment': garment })
+
+class GarmentCreate(CreateView):
+  model = Garment
+  fields = '__all__'
