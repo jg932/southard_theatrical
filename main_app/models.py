@@ -20,3 +20,9 @@ class Garment(models.Model):
   def get_absolute_url(self):
     return reverse('garments_detail', kwargs={'garment_id': self.id})
 
+class Photo(models.Model):
+  url = models.CharField(max_length=250)
+  garment = models.OneToOneField(Garment, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for garment_id: {self.garment_id} @{self.url}"
