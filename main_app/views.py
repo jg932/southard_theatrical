@@ -3,6 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Garment, Photo
 import uuid
 import boto3
@@ -25,6 +27,7 @@ def garments_detail(request, garment_id):
   garment = Garment.objects.get(id=garment_id)
   return render(request, 'garments/detail.html', {'garment': garment })
 
+@login_required
 def add_photo(request, garment_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
@@ -56,16 +59,16 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
-class GarmentCreate(CreateView):
+class GarmentCreate(LoginRequiredMixin, CreateView):
   model = Garment
   fields = '__all__'
   success_url = '/garments/'
 
-class GarmentUpdate(UpdateView):
+class GarmentUpdate(LoginRequiredMixin, UpdateView):
   model = Garment
   fields = '__all__'
 
-class GarmentDelete(DeleteView):
+class GarmentDelete(LoginRequiredMixin, DeleteView):
   model = Garment
   success_url = '/garments/'
 
