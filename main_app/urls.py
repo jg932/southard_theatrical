@@ -10,4 +10,5 @@ urlpatterns = [
   path('garments/create/', views.GarmentCreate.as_view(), name='garments_create'),
   path('garments/<int:pk>/update/', views.GarmentUpdate.as_view(), name="garments_update"),
   path('garments/<int:pk>/delete', views.GarmentDelete.as_view(), name='garments_delete'),
+  path('garments/<int:garment_id>/add_photo/', views.add_photo, name='add_photo'),
 ]

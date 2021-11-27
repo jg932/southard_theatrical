@@ -17,7 +17,15 @@
       <a href='{% url "garments_detail" garment.id %}'>
         <div class="card-content">
           <div class="card-img-container">
-            <img src="{% static 'images/empty_dressform.jpeg' %}" alt="A generic manaquin">
+            {% if garment.photo.url %}
+              <img 
+              src="{{garment.photo.url}}" 
+              alt="A photo of {{garment.type}}" 
+              class="usr-img"
+              >
+            {% else %}
+              <img src="{% static 'images/empty_dressform.jpeg' %}" alt="A generic manaquin">
+            {% endif %}
           </div>
           <h2 class="card-title">{{ garment.type }}</h2>
             <p><small>{{ garment.availability }}</small></p>

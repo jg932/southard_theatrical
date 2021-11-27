@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Garment
+from .models import Garment, Photo
+import uuid
+import boto3
+
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET = 'southard-theatrical'
 
 # Create your views here.
 def home(request):
@@ -17,6 +22,23 @@ def garments_detail(request, garment_id):
   garment = Garment.objects.get(id=garment_id)
   return render(request, 'garments/detail.html', {'garment': garment })
 
+def add_photo(request, garment_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Photo(url=url, garment_id=garment_id)
+      garment_photo = Photo.objects.filter(garment_id=garment_id)
+      if garment_photo.first():
+        garment_photo.first().delete()
+      photo.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3: %s' % err)
+  return redirect('garments_detail', garment_id=garment_id)
+
 class GarmentCreate(CreateView):
   model = Garment
   fields = '__all__'
@@ -29,3 +51,4 @@ class GarmentUpdate(UpdateView):
 class GarmentDelete(DeleteView):
   model = Garment
   success_url = '/garments/'
+
