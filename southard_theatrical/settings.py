@@ -128,5 +128,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'garments_index'
 
+LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

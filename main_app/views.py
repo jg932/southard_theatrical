@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
 from .models import Garment, Photo
 import uuid
@@ -39,6 +41,20 @@ def add_photo(request, garment_id):
     except Exception as err:
       print('An error occurred uploading file to S3: %s' % err)
   return redirect('garments_detail', garment_id=garment_id)
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('garments_index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'signup.html', context)
 
 class GarmentCreate(CreateView):
   model = Garment
