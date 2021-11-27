@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Garment
 
 # Create your views here.
@@ -20,4 +20,12 @@ def garments_detail(request, garment_id):
 class GarmentCreate(CreateView):
   model = Garment
   fields = '__all__'
+  success_url = '/garments/'
+
+class GarmentUpdate(UpdateView):
+  model = Garment
+  fields = '__all__'
+
+class GarmentDelete(DeleteView):
+  model = Garment
   success_url = '/garments/'

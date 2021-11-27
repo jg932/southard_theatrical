@@ -19,3 +19,4 @@ class Garment(models.Model):
 
   def get_absolute_url(self):
     return reverse('garments_detail', kwargs={'garment_id': self.id})
+
