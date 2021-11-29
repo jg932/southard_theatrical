@@ -23,10 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0&9q=pi4(i4a1ys@!lndmylenk)4x1n+b$e)b$zy1$^t$7f!8-'
+SECRET_KEY = env('SECRET_KEY') #'django-insecure-0&9q=pi4(i4a1ys@!lndmylenk)4x1n+b$e)b$zy1$^t$7f!8-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG') == 'True' 
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = []
 
@@ -133,3 +135,6 @@ LOGIN_REDIRECT_URL = 'garments_index'
 LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import django_heroku
+django_heroku.settings(locals())

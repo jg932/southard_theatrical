@@ -19,16 +19,16 @@
   <header>
     <div class="header-logo-container">
       <a href="/">
-        <img 
-          src="" 
-          alt=""
-        >
+        <h2>Southard Theatrical</h2>
       </a>
     </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'garments_index' %}">On the Rack</a></li>
+          <li><a href="{% url 'garments_index' %}">
+            <img src="{% static 'images/hanger2.jpeg' %}" alt="a wooden clothes hanger" height="20px">
+            On the Rack
+          </a></li>
           <li><a href="{% url 'garments_create' %}">Add a Garment</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>

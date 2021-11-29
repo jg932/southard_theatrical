@@ -15,12 +15,19 @@ main > section {
   flex-direction: column;
 }
 
+#logo{
+  font-family: VTKS EMBROIDERY;
+  font-size: 40px;
+}
+
 .header-logo-container {
   display: none;
 }
 
 .logo-container {
   max-width: 375px;
+  font-family: VTKS EMBROIDERY;
+  font-size: 40px;
 }
 
 .cat-container {
@@ -82,5 +89,7 @@ main > section {
 
   .logo-container {
     max-width: 520px;
+    font-family: VTKS EMBROIDERY;
+    font-size: 40px;
   }
 }
