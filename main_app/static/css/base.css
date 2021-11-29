@@ -30,7 +30,7 @@ body {
   --nav-bg-ff: rgba(250, 228, 190, 0.7);
   --borders: rgb(248, 192, 36) solid 2px;
   --text-color: rgb(17, 20, 17);
-  --link-hover-color: rgb(16, 56, 158);
+  --link-hover-color: rgb(158, 37, 16);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
   --submit: rgb(26, 128, 0);
@@ -267,7 +267,7 @@ nav li {
 
     nav,
     .header-logo-container {
-      background: rgba(104, 197, 248, .6);
+      background: rgba(250, 228, 190, 0.7);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }
