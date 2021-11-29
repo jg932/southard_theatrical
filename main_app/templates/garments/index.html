@@ -19,12 +19,16 @@
           <div class="card-img-container">
             {% if garment.photo.url %}
               <img 
+              height="200px"
               src="{{garment.photo.url}}" 
               alt="A photo of {{garment.type}}" 
               class="usr-img"
               >
             {% else %}
-              <img src="{% static 'images/empty_dressform.jpeg' %}" alt="A generic manaquin">
+              <img 
+              height="200px" 
+              src="{% static 'images/empty_dressform.jpeg' %}" 
+              alt="A generic manaquin">
             {% endif %}
           </div>
           <h2 class="card-title">{{ garment.type }}</h2>

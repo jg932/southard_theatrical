@@ -26,7 +26,6 @@
       <ul>
         {% if user.is_authenticated %}
           <li><a href="{% url 'garments_index' %}">
-            <img src="{% static 'images/hanger2.jpeg' %}" alt="a wooden clothes hanger" height="20px">
             On the Rack
           </a></li>
           <li><a href="{% url 'garments_create' %}">Add a Garment</a></li>

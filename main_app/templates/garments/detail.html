@@ -26,18 +26,20 @@
   <div class="cat-details">
     <h1>{{ garment.type }}</h1>
     <h2>{{ garment.rate }}</h2>
-    <h5>{{ garment.color }}</h5>
-    <h5>{{ garment.genre }}</h5>
-    <h5>{{ garment.materials }}</h5>
-    <h5>{{ garment.sizing }}</h5>
-    <h5>{{ garment.care }}</h5>
-    <h5>{{ garment.notes }}</h5>
+    <h4>Color: {{ garment.color }}</h4>
+    <h4>Period/Genre: {{ garment.genre }}</h4>
+    <h4>Materials: {{ garment.materials }}</h4>
+    <h4>Sizing info: {{ garment.sizing }}</h4>
+    <h4>Care Instructions: <br>{{ garment.care }}</h4>
+    <h4>Notes: <br>{{ garment.notes }}</h4>
   </div>
   <div class="cat-actions">
     <a href="{% url 'garments_update' garment.id %}" class="btn warn">Edit</a>
     <a href="{% url 'garments_delete' garment.id %}" class="btn danger">Delete</a>
   </div>
   <h3>Change photo</h3>
+  <input type="checkbox" name="garment.availability" checked>
+  <label for="garment.availability">Available?</label>
   <p id="file-name"></p>
   <form 
     action="{% url 'add_photo' garment.id %}"
