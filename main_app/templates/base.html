@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     rel="shortcut icon"
-    type="image/png"
-    href=""
+    type="image/jpg"
+    href="{% static 'images/cropped_gown.jpg' %}" alt="A generic manaquin"
   >
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>Southard Theatrical</title>
@@ -24,11 +24,13 @@
     </div>
     <nav>
       <ul>
-        {% if user.is_authenticated %}
-          <li><a href="{% url 'garments_index' %}">
-            On the Rack
-          </a></li>
+        {% if user.username == 'samantha' %}
+          <li><a href="{% url 'garments_index' %}">On the Rack</a></li>
           <li><a href="{% url 'garments_create' %}">Add a Garment</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'logout' %}">Log out</a></li>
+        {% elif user.is_authenticated %}
+          <li><a href="{% url 'garments_index' %}">On the Rack</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
@@ -47,7 +49,7 @@
   </main>
 </body>
 <footer id="footer">
-  <h3>Southard Theatrical | Twitter: @southard_costumes | IG: @southard.costumes | southard@costumes.sam </h3>
+  <h3>Southard Theatrical | <img src="{% static 'images/twitter.png' %}" height="12px"> @southard_costumes | <img src="{% static 'images/instagram.png' %}" height="10px"> @southard.costumes | southard@costumes.sam </h3>
 </footer>
 </div>
 </html>
