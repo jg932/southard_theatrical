@@ -11,8 +11,8 @@
 
 {% block content %}
 
-<section class="cat-container">
-  <div class="cat-img">
+<section class="garment-container">
+  <div class="garment-img">
     {% if garment.photo.url %}
       <img 
         src="{{garment.photo.url}}" 
@@ -23,7 +23,7 @@
       <img src="{% static 'images/empty_dressform.jpeg' %}" alt="A generic manaquin">
     {% endif %}
   </div>
-  <div class="cat-details">
+  <div class="garment-details">
     <h1>{{ garment.type }}</h1>
     <h2>{{ garment.rate }}</h2>
     <h4>Color: {{ garment.color }}</h4>
@@ -33,26 +33,30 @@
     <h4>Care Instructions: <br>{{ garment.care }}</h4>
     <h4>Notes: <br>{{ garment.notes }}</h4>
   </div>
-  <div class="cat-actions">
-    <a href="{% url 'garments_update' garment.id %}" class="btn warn">Edit</a>
-    <a href="{% url 'garments_delete' garment.id %}" class="btn danger">Delete</a>
-  </div>
-  <h3>Change photo</h3>
-  <input type="checkbox" name="garment.availability" checked>
-  <label for="garment.availability">Available?</label>
-  <p id="file-name"></p>
-  <form 
-    action="{% url 'add_photo' garment.id %}"
-    enctype="multipart/form-data"
-    method="POST"
-  >
-    {% csrf_token %}
-    <label class="btn secondary">
-      Choose photo
-      <input type="file" name="photo-file" id="file-input">
-    </label>
-    <button type="submit" class="btn submit">Upload Photo</button>
-  </form>
+  </section>
+  <section>
+    {% if user.username == 'samantha' %}
+      <div class="garment-actions">
+        <a href="{% url 'garments_update' garment.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'garments_delete' garment.id %}" class="btn danger">Delete</a>
+      </div>
+      <h3>Change photo</h3>
+      <input type="checkbox" name="garment.availability" checked>
+      <label for="garment.availability">Available?</label>
+      <p id="file-name"></p>
+      <form 
+        action="{% url 'add_photo' garment.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        {% csrf_token %}
+        <label class="btn secondary">
+          Choose photo
+          <input type="file" name="photo-file" id="file-input">
+        </label>
+        <button type="submit" class="btn submit">Upload Photo</button>
+      </form>
+    {% endif %}
 </section>
 
 {% endblock %}
