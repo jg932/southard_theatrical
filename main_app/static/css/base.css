@@ -46,7 +46,29 @@ body {
   --card-border-radius: 6px;
 }
 
+.background{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+  background-size: 100vh;
+}
 
+.background::after{
+  content: "";
+  background: url(../images/costume_patterns.jpeg);
+  opacity: .3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: 100vh;
+}
 
 header {
   width: 100%;
@@ -66,6 +88,7 @@ ul {
 
 main {
   width: 100%;
+
 }
 
 nav a {
@@ -88,6 +111,11 @@ nav ul {
 
 nav li {
   padding: 5px 8px;
+}
+
+#home_imgs{
+  display:grid;
+  grid-template-columns: repeat(3, 1vh);
 }
 
 .header-logo-container {
