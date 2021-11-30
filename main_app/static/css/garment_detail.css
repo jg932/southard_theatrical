@@ -9,6 +9,7 @@
 .garment-img {
   width: 75%;
   max-width: 350px;
+  
 }
 
 .usr-img {
@@ -38,7 +39,7 @@
   margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .garment-container {
     padding: 35px 30px;
     flex-direction: row;
@@ -51,4 +52,4 @@
     max-width: 250px;
     margin-right: 25px;
   }
-}
+} */
