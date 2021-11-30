@@ -44,6 +44,7 @@ body {
   --font-l: 1.8rem;
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
+  background-image: url(../images/new_background_image.png);
 }
 
 #about-text{
@@ -181,29 +182,6 @@ nav li {
 
 .page-header img:first-of-type {
   margin-left: 20px;
-}
-
-.background{
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -5;
-  background-size: 100vh;
-}
-
-.background::after{
-  content: "";
-  background: url(../images/costume_patterns.jpeg);
-  opacity: .3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -5;
-  background-size: 100vh;
 }
 
 @media only screen and (min-width: 768px) {

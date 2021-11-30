@@ -7,6 +7,7 @@
   type="text/css" 
   href="{% static 'css/garment_detail.css' %}"
 />
+<script defer src="{% static 'js/garment_detail.js' %}"> </script>
 {% endblock %}
 
 {% block content %}
@@ -34,15 +35,18 @@
     <h4>Notes: <br><span class="details">{{ garment.notes }}</span></h4>
   </div>
   </section>
+  <h4 id="out_of_stock_display" hidden>Item is current out on a rental!</h4>
   <section>
     {% if user.username == 'samantha' %}
+      <button type="button" id="available_button">Out of stock</button>
+      <br>
+      <br>
+      <br>
       <div class="garment-actions">
-        <a href="{% url 'garments_update' garment.id %}" class="btn warn">Edit</a>
-        <a href="{% url 'garments_delete' garment.id %}" class="btn danger">Delete</a>
+        <a href="{% url 'garments_update' garment.id %}" class="btn warn">Edit Details</a>
+        <a href="{% url 'garments_delete' garment.id %}" class="btn danger">Delete Item</a>
       </div>
-      <h3>Change photo</h3>
-      <input type="checkbox" name="garment.availability" checked>
-      <label for="garment.availability">Available?</label>
+      <br>
       <p id="file-name"></p>
       <form 
         action="{% url 'add_photo' garment.id %}"
@@ -56,6 +60,7 @@
         </label>
         <button type="submit" class="btn submit">Upload Photo</button>
       </form>
+      
     {% endif %}
 </section>
 
