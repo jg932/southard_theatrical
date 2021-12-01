@@ -33,12 +33,13 @@
     <h4>Sizing info: <span class="details">{{ garment.sizing }}</span></h4>
     <h4>Care Instructions: <br><span class="details">{{ garment.care }}</span></h4>
     <h4>Notes: <br><span class="details">{{ garment.notes }}</span></h4>
+    <h4 id="out_of_stock_display" hidden>Item is current out on a rental!</h4>
   </div>
   </section>
-  <h4 id="out_of_stock_display" hidden>Item is current out on a rental!</h4>
   <section>
     {% if user.username == 'samantha' %}
-      <button type="button" id="available_button">Out of stock</button>
+      <button type="button" class="avail_btn" id="unavailable_button">Out of stock</button>
+      <button type="button" class="avail_btn" id="available_button" hidden>Back in stock</button>
       <br>
       <br>
       <br>

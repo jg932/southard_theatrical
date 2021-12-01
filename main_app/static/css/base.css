@@ -51,15 +51,8 @@ body {
   font-size: large;
 }
 
-#login-card{
-  background: rgba(250, 228, 190, 0.7);
-  border-radius: 6px;
-  height:fit-content
-}
-
 #about {
-  padding-top: 40px;
-  margin-top: 40px;
+
   justify-content: left;
 }
 
@@ -73,6 +66,10 @@ body {
   justify-items: center;
   align-content: center;
   align-items: center;
+}
+
+#footer{
+  font-size: 8px;
 }
 
 header {
@@ -132,6 +129,18 @@ nav li {
   padding-top: 100px;
 }
 
+#out_of_stock_display{
+  font-size: x-large;
+  color: red;
+  border-radius: 50px;
+}
+
+.avail_btn{
+  color: white;
+  background-color: rgb(0, 81, 255);
+  border-color: blue;
+}
+
 .btn {
   font-size: var(--font-l);
   padding: 8px 16px;
@@ -151,23 +160,27 @@ nav li {
 }
 
 .submit {
-  color: var(--submit);
-  border-color: var(--submit);
+  color: white;
+  border-color: rgb(33, 153, 33);
+  background-color: var(--submit);
 }
 
 .secondary {
-  color: var(--secondary);
-  border-color: var(--secondary);
+  color: white;
+  background-color: var(--secondary);
+  border-color: black;
 }
 
 .warn {
-  color: var(--warn);
-  border-color: var(--warn);
+  color: white;
+  background-color: var(--warn);
+  border-color: rgb(162, 105, 0);
 }
 
 .danger {
-  color: var(--danger);
-  border-color: var(--danger);
+  color: white;
+  background-color: var(--danger);
+  border-color: red;
 }
 
 .page-header h1 {
@@ -239,6 +252,10 @@ nav li {
     display:grid;
     grid-template-columns: repeat(3,300px);
     grid-template-rows: repeat(2, 300px)
+  }
+
+  #footer{
+    font-size: 15px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
