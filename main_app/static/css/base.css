@@ -265,6 +265,10 @@ nav li {
     font-size: 15px;
   }
 
+  #welcome_img{
+    padding-left: 5%;
+  }
+
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     header {
       background: var(--nav-bg);
@@ -303,12 +307,7 @@ nav li {
   } */
 
   #welcome_img{
-    position: relative;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
+    padding-left: 20%;
   }
 
   #about {
