@@ -1,5 +1,7 @@
 ![image of Southard Theatrical logo](main_app/static/images/Screen%20Shot%202021-11-30%20at%2010.47.26%20PM.png)
-# [Costumes](https://https://southard-theatrical.herokuapp.com/)
+# Costumes
+
+[Visit the app here](https://southard-theatrical.herokuapp.com/)
 
 ### Introduction
 This project was a first taste of being able to combine my previous profesional work in theatre with my new field of engineering! This was one of those possibilities I talked about when I first started GA. Samantha Southard is my partner and she was struggling with Word Press as I was planning to start a career change after the effects of the pandemic. This is by no means a final product but a very fun first attempt at sharing in her continued theatrical career.
