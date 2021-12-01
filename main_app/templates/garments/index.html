@@ -19,14 +19,12 @@
           <div class="card-img-container">
             {% if garment.photo.url %}
               <img 
-              height="200px"
               src="{{garment.photo.url}}" 
               alt="A photo of {{garment.type}}" 
               class="usr-img"
               >
             {% else %}
               <img 
-              height="200px" 
               src="{% static 'images/empty_dressform.jpeg' %}" 
               alt="A generic manaquin">
             {% endif %}
