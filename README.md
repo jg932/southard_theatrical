@@ -1,5 +1,4 @@
 ![image of Southard Theatrical logo](main_app/static/images/Screen%20Shot%202021-11-30%20at%2010.47.26%20PM.png)
-# Costumes
 
 [Visit the app here](https://southard-theatrical.herokuapp.com/)
 
