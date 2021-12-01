@@ -9,7 +9,7 @@
 
 <img id="welcome_img" src="{% static 'images/costume_storage3.png' %}" alt="costumes hanging in storage">
 <hr />
-<h1 id="logo">Southard <br>Theatrical</h1><hr /><br><h2 id="logo-subtext">a boutique costume experience<br>builds and rentals</h2>
+<h1 id="logo">Southard <br>Theatrical</h1><h2 id="logo-subtext">a boutique costume experience<br>builds and rentals</h2>
 {% if not user.is_authenticated %}
   <section id="login-card">
     <form action="{% url 'home' %}" method="post" class="login">

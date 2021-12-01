@@ -30,7 +30,7 @@ main > section {
   font-size: 40px;
 }
 
-.cat-container {
+.garment-container {
   width: 80%;
 }
 
@@ -84,10 +84,7 @@ main > section {
   }
 
   .login {
-    border: var(--borders);
     padding: 20px;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-box-shadow);
     width: 100%;
   }
 
